@@ -21,6 +21,8 @@ urlpatterns = i18n_patterns("",
 
 urlpatterns += patterns('',
                         url(r'^people/', include('mezzanine_people.urls')),
+                        url(r'^administrasjon/legg-til-spiller/', 'players.views.player', name="legg-til-spiller"),
+                        url(r'^administrasjon/legg-til-kamp/', 'players.views.player', name="legg-til-kamp"),
 
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.
