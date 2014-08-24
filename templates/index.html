@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% load i18n  mezzanine_tags staticfiles%}
+{% block meta_title %}{% trans "Home" %}{% endblock %}
+{% block title %}{% trans "Home" %}{% endblock %}
+{% block breadcrumb_wrapper %}
+{% endblock %}
+
+{% block title_wrapper %}
+{% endblock %}
+
+{% block all_content %}
+
+ <!--Slider-->
+    <section id="slide-show" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+     <div id="slider" class="sl-slider-wrapper">
+
+        <!--Slider Items-->    
+        <div class="sl-slider">
+            <!--Slider Item1-->
+            <div class="sl-slide item1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+                <div class="sl-slide-inner">
+                    <div class="container">
+                        <img class="pull-right" src="{% static "images/sample/slider/img1.png" %}" alt="" />
+                        <h2>To Damelag</h2>
+                        <h3 class="gap">D1 i 2. Divisjon  /  D2 i 3. Divisjon</h3>
+                    </div>
+                </div>
+            </div>
+            <!--/Slider Item1-->
+
+            <!--Slider Item2-->
+            <div class="sl-slide item2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+                <div class="sl-slide-inner">
+                    <div class="container">
+                        <img class="pull-right" src="{% static "images/sample/slider/img2.png" %}" alt="" />
+                        <h2>To Herrelag</h2>
+                        <h3 class="gap">H1 i 1. Divisjon / H2 i 4. Divisjon</h3>
+                    </div>
+                </div>
+            </div>
+            <!--Slider Item2-->
+
+            <!--Slider Item3-->
+            <div class="sl-slide item3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+                <div class="sl-slide-inner">
+                   <div class="container">
+                    <img class="pull-right" src="{% static "images/sample/slider/img3.png" %}" alt="" />
+                    <h2>Vi Ser Etter Nye Medlemmer</h2>
+                    <h3 class="gap">Alle er velkomne</h3>
+                </div>
+            </div>
+        </div>
+        <!--Slider Item3-->
+
+    </div>
+    <!--/Slider Items-->
+
+    <!--Slider Next Prev button-->
+    <nav id="nav-arrows" class="nav-arrows">
+        <span class="nav-arrow-prev"><i class="icon-angle-left"></i></span>
+        <span class="nav-arrow-next"><i class="icon-angle-right"></i></span> 
+    </nav>
+    <!--/Slider Next Prev button-->
+
+</div>
+<!-- /slider-wrapper -->           
+</section>
+<!--/Slider-->
+<section class="main-info">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="">
+                <h4>Om oss</h4>
+                <p class="no-margin">
+                    Vi tar i mot studenter på alle ferdighetsnivåer. Vi søker både gutter og jenter som har lyst til å spille innebandy! Ta kontakt!<br> Vi ønsker nye spillere på alle nivåer velkommen og kan tilby gode treningsforhold både for herrer og damer.
+                    Alle som trener med OSI på Blindern Athletica / Domus Athletica må kjøpe adgangskort til Studentidrettens treningssentre. Dette gir full adgang til treningsstudio, aktivitetssaler, svømmehall og mange andre treningstilbud, og koster kun 900,- for 6 mnd (studenter ved UiO/HiOA/NMH / NVH / AHO / KHiO).
+                    Lyst å begynne? Vil du har mer informasjon? Kontakt oss på facebook, eller send mail til osi.innebandy@gmail.com<br>
+                    <br>
+                    <h4>Lag sesong 2014/15:</h4>
+
+                        <li>OSI Herrer 1: 1. divisjon Østlandsserien</li>
+                        <li>OSI Herrer 2: 4. divisjon</li>
+                        <li>OSI Damer 1: 2. divisjon</li>
+                        <li>OSI Damer 2: 3. divisjon</li>
+
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="recent-works">
+    <div class="container">
+        <div class="center">
+            <h3>Våre Treningstider</h3>
+            <p class="lead">
+                <h3>Damer:</h3>
+                    <li>mandag 19.00 - 20.30 <a href="https://www.google.no/maps/place/Athletica+Domus/@59.947404,10.721922,17z/data=!4m6!1m3!3m2!1s0x0:0x1467aea8301915d6!2sDomus+Athletica!3m1!1s0x0:0x564c4a10cd4f0221" target="_blank">Domus Athletica</a></li>
+                    <li>onsdag 20.30 - 22.00 <a href="https://www.google.no/maps/place/Idrettsbygningen,+Universitetet+i+Oslo,+0313+Oslo/@59.940942,10.7222776,19z/data=!3m1!4b1!4m2!3m1!1s0x46416de6fb598cff:0xcbdccba7207d987d" target="_blank">Blindern Athletica</a></li>
+                <h3>Herrer:</h3>
+                    <li>mandag 20.30 - 22.00 <a href="https://www.google.no/maps/place/Athletica+Domus/@59.947404,10.721922,17z/data=!4m6!1m3!3m2!1s0x0:0x1467aea8301915d6!2sDomus+Athletica!3m1!1s0x0:0x564c4a10cd4f0221" target="_blank">Domus Athletica</a></li>
+                    <li>torsdag 18.00 - 19.15 <a href="https://www.google.no/maps/place/Anna+Sethnes+hus+-+H%C3%B8gskolen+i+Oslo+og+Akershus+(HiOA)/@59.9226789,10.7333428,18z/data=!4m6!1m3!3m2!1s0x46416e796cb90cf1:0x99e77f4a1223c3f9!2sH%C3%B8gskolen+i+Oslo!3m1!1s0x0:0x8fa79d1a9ca604ab" target="_blank">HiOA-hallen</a>
+                <h3>Felles/Nybegynner:</h3>
+                    <li>torsdag 19.15 - 20.30 <a href="https://www.google.no/maps/place/Anna+Sethnes+hus+-+H%C3%B8gskolen+i+Oslo+og+Akershus+(HiOA)/@59.9226789,10.7333428,18z/data=!4m6!1m3!3m2!1s0x46416e796cb90cf1:0x99e77f4a1223c3f9!2sH%C3%B8gskolen+i+Oslo!3m1!1s0x0:0x8fa79d1a9ca604ab" target="_blank">HiOA-hallen</a>
+            </p>
+        </div>
+    </div>
+
+</section>
+
+<section id="clients" class="main">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span2">
+                <div class="clearfix">
+                    <h4 class="pull-left">VÅRE SPONSORER</h4>
+                    <div class="pull-right">
+                        <a class="prev" href="#myCarousel" data-slide="prev"><i class="icon-angle-left icon-large"></i></a> <a class="next" href="#myCarousel" data-slide="next"><i class="icon-angle-right icon-large"></i></a>
+                    </div>
+                </div>
+                <p>OSI-Innebandy blir støttet av</p>
+            </div>
+            <div class="span10">
+                <div id="myCarousel" class="carousel slide clients">
+                  <!-- Carousel items -->
+                  <div class="carousel-inner">
+                    <div class="active item">
+                        <div class="row-fluid">
+                            <ul class="thumbnails">
+                                <li class="span3"><a href="#"><img src="{% static "images/sample/clients/akademika.png" %}"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="row-fluid">
+                            <ul class="thumbnails">
+                                <li class="span3"><a href="#"><img src="{% static "images/sample/clients/akademika.png" %}"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="row-fluid">
+                            <ul class="thumbnails">
+                                <li class="span3"><a href="#"><img src="{% static "images/sample/clients/akademika.png" %}"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Carousel items -->
+
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+
+
+
+{% block left_wrapper %}
+{% endblock %}
+
+
+{% block main_wrapper %}
+
+
+{% endblock %}
+{% block right_wrapper %}
+{% endblock %}
+
+
+
+{% endblock %}
