@@ -105,13 +105,7 @@
 <section id="{% block section_id %}content{% endblock %}" class="{% block section_class %}{% endblock %}">
 	<div class="container">
 		<div class="row-fluid">
-		{% block left_wrapper %}
-			<div class="span{% block left_col_size %}2{% endblock %} {% block left_class %}left{% endblock %}">
-				{% block left_panel %}
-					<div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>
-				{% endblock %}
-			</div>
-		{% endblock %}
+
 	{% block main_wrapper %}
 
 		<div class="span{% block main_col_size %}7{% endblock %} {% block main_class %}middle{% endblock %}">
@@ -138,15 +132,15 @@
                 <h4>Kontakt</h4>
                 <ul class="unstyled address">
                     <li>
-                        <i class="icon-home"></i><strong>Adresse:</strong> Trimveien 4<br>
+                        <i class="icon-home"></i><strong>Adresse:</strong> <a href="https://www.google.no/maps/place/Athletica+Domus/@59.9467515,10.7238096,18z/data=!4m7!1m4!3m3!1s0x46416de45de6f73d:0xb871f29f14866039!2sTrimveien+4,+0856+Oslo!3b1!3m1!1s0x0:0x564c4a10cd4f0221">Trimveien 4</a><br>
                     </li>
                     <li>
                         <i class="icon-envelope"></i>
-                        <strong>E-post: </strong> osi.innebandy@gmail.com
+                        <strong>E-post: </strong> <a href="mailto:osi.innebandy@gmail.com">osi.innebandy@gmail.com</a>
                     </li>
                     <li>
                         <i class="icon-globe"></i>
-                        <strong>Hjemmeside:</strong> www.hjemmeside.no
+                        <strong>Hjemmeside:</strong> <a href="www.hjemmeside.no">www.hjemmeside.no</a>
                     </li>
                     <li>
                         <i class="icon-phone"></i>

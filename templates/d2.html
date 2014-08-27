@@ -1,0 +1,91 @@
+{% extends "pages/page.html" %}
+
+{% load pages_tags mezzanine_tags %}
+
+{% block main %}{{ block.super }}
+    <!-- Player table -->
+    <h2>Spillere</h2>
+    <div class="table-responsive>">
+        <table class="table table-striped">
+            <tr>
+                <th>Fornavn</th>
+                <th>Etternavn</th>
+                <th>Draktnummer</th>
+                <th>Posisjon</th>
+            </tr>
+            {% for player in players %}
+                {% if player.lag == "D2" %}
+                    <tr>
+                        <td>{{ player.fornavn }}</td>
+                        <td>{{ player.etternavn }}</td>
+                        <td>{{ player.draktnummer }}</td>
+                        <td>{{ player.posisjon }}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </div>
+
+    <!-- Match table -->
+    <h2>Kommende kamper</h2>
+    <div class="table-responsive>">
+        <table class="table table-striped">
+            <tr>
+                <th>Dato</th>
+                <th>Hjemmelag</th>
+                <th>Bortelag</th>
+                <th>Sted</th>
+            </tr>
+            {% for match in matches %}
+                {% if match.hjemmelag == "D2" or match.bortelag == "D2" %}
+                    {% if match.is_past_due %}
+                        In the past
+                    {% else %}
+                        <tr>
+                            <td>{{ match.dato }}</td>
+                            <td>{{ match.hjemmelag }}</td>
+                            <td>{{ match.bortelag }}</td>
+                            <td>{{ match.sted }}</td>
+                        </tr>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </table>
+    </div>
+
+    <!-- Result table -->
+    <h2>Resultater</h2>
+    <div class="table-responsive>">
+        <table class="table table-striped">
+            <tr>
+                <th>Kamp</th>
+                <th>Hjemmelag</th>
+                <th>Bortelag</th>
+                <th>Sted</th>
+                <th>Dato</th>
+            </tr>
+            {% for result in results %}
+                {% if result.kamp.hjemmelag == "D2" or result.kamp.bortelag == "D2" %}
+                    <tr>
+                        <td>{{ result.kamp }}</td>
+                        <td>{{ result.mål_hjemmelag }}</td>
+                        <td>{{ result.mål_bortelag }}</td>
+                        <td>{{ result.kamp.sted }}</td>
+                        <td>{{ result.kamp.dato }}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
+
+{% block main_wrapper %}{{ block.super }}
+    <div id="right-side contents" style="text-align: center">
+        <h2>Trener</h2>
+        <div id="trener-info">
+            <h3>Ola Liabøtrø</h3>
+            <p><strong>Tlf:</strong>: 123 45 678</p>
+            <p><strong>E-post</strong> <a href="mailto:example@example.com">example@example.com</a></p>
+        </div>
+    </div>
+{% endblock %}

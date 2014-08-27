@@ -19,7 +19,7 @@
         <h4 class="media-heading">{{ comment.user_name }}
     {% endif %}
             <small >
-                {% blocktrans with sometime=comment.submit_date|timesince %}{{ sometime }} ago{% endblocktrans %}
+                {% blocktrans with sometime=comment.submit_date|timesince %}{{ sometime }} siden{% endblocktrans %}
             </small>
         </h4>
     <p>{{ comment.comment|comment_filter }}</p>
@@ -30,13 +30,8 @@
         <span class="glyphicon glyphicon-link"></span> {% trans "Link" %}
     </a> |
     <a href="#reply-{{ comment.id }}" class="reply">
-        <span class="glyphicon glyphicon-share-alt"></span> {% trans "Reply" %}
+        <span class="glyphicon glyphicon-share-alt"></span> {% trans "Svar" %}
     </a>
-    {% if settings.COMMENTS_USE_RATINGS %}
-    <div class="rating">
-    {% rating_for comment %}
-    </div>
-    {% endif %}
     <form class="comment-reply-form" method="post" id="reply-{{ comment.id }}"
         action="{{ comment_url }}#reply-{{ comment.id }}"
         {% if replied_to != comment.id %}style="display:none;"{% endif %}>
@@ -68,6 +63,5 @@
 {% endfor %}
 
 {% if no_comments %}
-<p>{% trans "There are currently no comments" %}</p>
+<p>{% trans "Det er foreløpig ingen kommentarer" %}</p>
 {% endif %}
-

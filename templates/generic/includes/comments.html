@@ -1,6 +1,6 @@
 {% load i18n mezzanine_tags comment_tags %}
 <div id="comments">
-<h3>{% trans "Comments" %}</h3>
+<h3>{% trans "Kommentarer" %}</h3>
 {% if settings.COMMENTS_DISQUS_SHORTNAME %}
 {% include "generic/includes/disqus_comments.html" %}
 {% else %}
@@ -14,7 +14,7 @@ $(function() {
 </script>
 <style>.input_id_honeypot {display:none !important;}</style>
 {% comment_thread object_for_comments %}
-<h3>{% trans "New Comment" %}</h3>
+<h3>{% trans "Ny Kommentar" %}</h3>
 
     {% if not request.POST.replied_to %}
 		{% include "generic/includes/comment_form.html" with comment_form=posted_comment_form %}

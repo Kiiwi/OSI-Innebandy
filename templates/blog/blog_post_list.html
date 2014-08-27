@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load i18n future mezzanine_tags blog_tags keyword_tags disqus_tags %}
 
-{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Blog" %}{% endif %}{% endblock %}
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Blogg" %}{% endif %}{% endblock %}
 
 {% block meta_keywords %}{% metablock %}
 {% keywords_for page as keywords %}
@@ -27,11 +27,11 @@
 {% if tag %}
     {% trans "Tag:" %} {{ tag }}
 {% else %}{% if category %}
-    {% trans "Category:" %} {{ category }}
+    {% trans "Kategori:" %} {{ category }}
 {% else %}{% if year or month %}
     {% if month %}{{ month }}, {% endif %}{{ year }}
 {% else %}{% if author %}
-    {% trans "Author:" %} {{ author.get_full_name|default:author.username }}
+    {% trans "Forfatter:" %} {{ author.get_full_name|default:author.username }}
 {% endif %}{% endif %}{% endif %}{% endif %}
 {% endspaceless %}
 </li>
@@ -47,14 +47,14 @@
     {% block blog_post_list_filterinfo %}
     <p>
     {% if tag %}
-        {% trans "Viewing posts tagged" %} {{ tag }}
+        {% trans "Viser innlegg tagget som" %} {{ tag }}
     {% else %}{% if category %}
-        {% trans "Viewing posts for the category" %} {{ category }}
+        {% trans "Viser innlegg for kategorien" %} {{ category }}
     {% else %}{% if year or month %}
-        {% trans "Viewing posts from" %} {% if month %}{{ month }}, {% endif %}
+        {% trans "Viser innlegg fra" %} {% if month %}{{ month }}, {% endif %}
         {{ year }}
     {% else %}{% if author %}
-        {% trans "Viewing posts by" %}
+        {% trans "Viser innlegg av" %}
         {{ author.get_full_name|default:author.username }}
     {% endif %}{% endif %}{% endif %}{% endif %}
     {% endblock %}
@@ -83,7 +83,7 @@
 		{% block blog_post_list_post_metainfo %}
 		{% editable blog_post.publish_date %}
 		<p class="pull-left">
-		<i class="icon-calendar"></i><a href="#"> {% blocktrans with sometime=blog_post.publish_date|timesince %}{{ sometime }} ago{% endblocktrans %}</a>
+		<i class="icon-calendar"></i><a href="#"> {% blocktrans with sometime=blog_post.publish_date|timesince %}{{ sometime }} siden{% endblocktrans %}</a>
 		{% with blog_post.user as author %}
 		<i class="icon-user"></i><a href="{% url "blog_post_list_author" author %}"> {{author.get_full_name|default:author.username}}</a>
 		{% endwith %}
@@ -108,11 +108,11 @@
 			<i class="icon-comments"></i>
 			<a href="{{ blog_post.get_absolute_url }}#disqus_thread"
 				data-disqus-identifier="{% disqus_id_for blog_post %}">
-				{% trans "Comments" %}
+				{% trans "Kommentarer" %}
 			</a>
 			{% else %}
 			<a href="{{ blog_post.get_absolute_url }}#comments">
-			{% blocktrans count comments_count=blog_post.comments_count %}{{ comments_count }} comment{% plural %}{{ comments_count }} comments{% endblocktrans %}
+			{% blocktrans count comments_count=blog_post.comments_count %}{{ comments_count }} kommentar{% plural %}{{ comments_count }} kommentarer{% endblocktrans %}
 			</a>
 			{% endif %}
 			
@@ -142,7 +142,7 @@
 {% endeditable %}
 {% endblock %}
    {% block read_more%}
-				<a href="{{ blog_post.get_absolute_url }}" class="btn btn-link">Read More <i class="icon-angle-right"></i></a>
+				<a href="{{ blog_post.get_absolute_url }}" class="btn btn-link">Les Mer <i class="icon-angle-right"></i></a>
 			{% endblock %}
 
 	</div>

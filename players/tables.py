@@ -1,14 +1,14 @@
-from django import forms
-
+import django_tables2 as tables
 from .models import Player
 from .models import Match
 
 
-class PlayerForm(forms.ModelForm):
+class PlayerTable(tables.Table):
+
     class Meta:
         model = Player
 
+class MatchTable(tables.Table):
 
-class MatchForm(forms.ModelForm):
     class Meta:
         model = Match

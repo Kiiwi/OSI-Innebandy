@@ -6,6 +6,10 @@ from django.contrib import admin
 
 from mezzanine.core.views import direct_to_template
 
+from players.views import D1
+from players.views import D2
+from players.views import H1
+from players.views import H2
 
 admin.autodiscover()
 
@@ -21,8 +25,10 @@ urlpatterns = i18n_patterns("",
 
 urlpatterns += patterns('',
                         url(r'^people/', include('mezzanine_people.urls')),
-                        url(r'^administrasjon/legg-til-spiller/', 'players.views.player', name="legg-til-spiller"),
-                        url(r'^administrasjon/legg-til-kamp/', 'players.views.player', name="legg-til-kamp"),
+                        url(r'^d1/', D1.as_view(), name="lists"),
+                        url(r'^d2/', D2.as_view(), name="lists"),
+                        url(r'^h1/', H1.as_view(), name="lists"),
+                        url(r'^h2/', H2.as_view(), name="lists"),
 
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.

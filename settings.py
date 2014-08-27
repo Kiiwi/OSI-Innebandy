@@ -77,7 +77,7 @@ from __future__ import absolute_import, unicode_literals
 
 # If True, the south application will be automatically added to the
 # INSTALLED_APPS setting.
-USE_SOUTH = True
+USE_SOUTH = False
 
 
 ########################
@@ -127,6 +127,11 @@ DEBUG = True
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 SITE_ID = 1
+
+SITE_TITLE = "OSI-Innebandy"
+
+#COMMENTS_ACCOUNT_REQUIRED = True
+
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -249,8 +254,9 @@ INSTALLED_APPS = (
     "mezzanine.galleries",
     "mezzanine.twitter",
     "players",
+    #"django_tables2",
     #"mezzanine.accounts",
-    #"mezzanine.mobile",
+    "mezzanine.mobile",
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -267,6 +273,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.tz",
     "mezzanine.conf.context_processors.settings",
     "mezzanine.pages.context_processors.page",
+    "django.core.context_processors.request",
 )
 
 # List of middleware classes to use. Order is important; in the request phase,
